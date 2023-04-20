@@ -6,7 +6,7 @@ const privateKey = [
 module.exports = {
   plugins: ["truffle-plugin-verify"],
   api_keys: {
-    etherscan: "", //Replace with your etherscan key for verification
+    etherscan: "IEZC4N53PVJD9TVHV2KZDSVVKRM5D46PJZ", //Replace with your etherscan key for verification
   },
   networks: {
     

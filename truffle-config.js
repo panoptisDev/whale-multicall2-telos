@@ -10,6 +10,7 @@ networks: {
       port: 7545,            // Standard BSC port (default: none)
       network_id: "*",       // Any network (default: none)
     },
+
     bscTestnet: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://data-seed-prebsc-1-s1.binance.org:8545`),
       network_id: 97,
@@ -60,13 +61,20 @@ networks: {
       confirmations: 2,
       timeoutBlocks: 2000,
       skipDryRun: true
+    },
+    pulse: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc.v4.testnet.pulsechain.com`),
+      network_id: 943,
+      confirmations: 3,
+      timeoutBlocks: 20000,
+      skipDryRun: true
     }
   },
   plugins: [
     'truffle-plugin-verify'
   ],
   api_keys: {
-    etherscan: '',
+    etherscan: 'IEZC4N53PVJD9TVHV2KZDSVVKRM5D46PJZ',
     bscscan: process.env.BSCSCAN_API_KEY,
     polygonscan: process.env.POLYGONSCAN_API_KEY,
     hecoinfo: '',
