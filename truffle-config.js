@@ -68,7 +68,35 @@ networks: {
       confirmations: 3,
       timeoutBlocks: 20000,
       skipDryRun: true
-    }
+    },
+    linea: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc.goerli.linea.build`),
+      network_id: 59140,
+      confirmations: 5,
+      timeoutBlocks: 200000,
+      skipDryRun: true
+    },
+    goerli: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc.ankr.com/eth_goerli`),
+      network_id: 5,
+      confirmations: 2,
+      timeoutBlocks: 2000,
+      skipDryRun: true
+    },
+    zksynk: { //mainnet
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://mainnet.era.zksync.io`),
+      network_id: 324,
+      confirmations: 2,
+      timeoutBlocks: 2000,
+      skipDryRun: true
+    },
+    scroll: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://alpha-rpc.scroll.io/l2`),
+      network_id: 534353,
+      confirmations: 2,
+      timeoutBlocks: 2000,
+      skipDryRun: true
+    },
   },
   plugins: [
     'truffle-plugin-verify'
